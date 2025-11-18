@@ -67,12 +67,15 @@ export default function DemoMenu() {
           <p className="text-gray-600 mt-8">
             Or try our web demo:{" "}
             <a
-              href="#"
+              href="https://him12.github.io/Web_Menu_QR_Demo/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-emerald-600 font-semibold hover:text-emerald-700"
             >
               https://him12.github.io/Web_Menu_QR_Demo/
             </a>
           </p>
+
         </div>
 
         {/* MENU ITEMS */}
