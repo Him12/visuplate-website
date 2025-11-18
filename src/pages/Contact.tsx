@@ -30,15 +30,15 @@ export default function Contact() {
 
     emailjs
       .send(
-        "service_mi6l6mc",   // <-- Replace
-        "template_vtyy8rv",  // <-- Replace
+        "service_n0tdloi",   // <-- Replace
+        "template_7flpxvj",  // <-- Replace
         {
           name: formData.name,
           email: formData.email,
           restaurant: formData.restaurantName,
           message: formData.message,
         },
-        "Sc3Fg-FyVaHWzWJPU"    // <-- Replace
+        "B6wKR7DPbmnbWCbbz"    // <-- Replace
       )
       .then(() => {
         console.log("Email sent successfully");
@@ -86,10 +86,10 @@ export default function Contact() {
               Send us an email and we'll respond within 24 hours.
             </p>
             <a
-              href="mailto:hello@thevisuplate.com"
+              href="mailto:thevisuplate@gmail.com"
               className="text-emerald-600 font-semibold hover:text-emerald-700"
             >
-              hello@thevisuplate.com
+              thevisuplate@gmail.com
             </a>
           </div>
 

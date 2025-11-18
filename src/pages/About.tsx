@@ -41,16 +41,19 @@ export default function About() {
       name: 'Gagan Kaushik',
       role: 'CEO & Co-Founder',
       bio: 'Visionary entrepreneur in restaurant technology.',
+      image: "/visuplate-website/images/CEO.jpg",
     },
     {
       name: 'Himanshu Kumar',
       role: 'CTO & Co-Founder',
       bio: 'Experience in AR technology with background at leading tech companies',
+      image: "/visuplate-website/images/CTO.jpg",
     },
     {
       name: 'Devang Pratap Singh',
       role: 'CMO & Co-Founder, Head of Customer Success and Marketing',
       bio: 'Dedicated to supporting restaurant partners and their growth',
+      image: "/visuplate-website/images/CMO.png",
     },
   ];
 
@@ -129,9 +132,15 @@ export default function About() {
                 key={index}
                 className="bg-white rounded-2xl p-8 border-2 border-gray-100 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 text-center"
               >
-                <div className="w-20 h-20 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">
-                  {member.name.split(" ").map(n => n[0]).join("")}
+                <div className="w-36 h-36 mx-auto mb-4">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full rounded-full object-cover border-4 border-emerald-300 shadow-lg"
+                  />
                 </div>
+
+
 
                 <h3 className="text-lg font-bold text-gray-900 mb-1">{member.name}</h3>
                 <p className="text-emerald-600 font-semibold mb-3">{member.role}</p>

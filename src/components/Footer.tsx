@@ -100,8 +100,8 @@ export default function Footer() {
                 <Mail className="w-5 h-5 text-emerald-400 mt-1" />
                 <div>
                   <div className="text-sm text-gray-400">Email</div>
-                  <a href="mailto:hello@thevisuplate.com" className="hover:text-emerald-400">
-                    hello@thevisuplate.com
+                  <a href="mailto:thevisuplate@gmail.com" className="hover:text-emerald-400">
+                    thevisuplate@gmail.com
                   </a>
                 </div>
               </li>
