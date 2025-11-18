@@ -1,27 +1,31 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navigation from './components/Navigation';
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import DemoMenu from './pages/DemoMenu';
-import Footer from './components/Footer';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navigation from "./components/Navigation";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import DemoMenu from "./pages/DemoMenu";
+import Footer from "./components/Footer";
 import Careers from "./pages/Careers";
 import Pricing from "./pages/Pricing";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Cookies from "./pages/Cookies";
-
-import ScrollToTop from "./components/ScrollToTop";   // <-- ADD THIS
+import BottomNav from "./components/BottomNav";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <BrowserRouter basename="/visuplate-website">
-
-      <ScrollToTop />   {/* <-- FIX PAGE NOT SCROLLING TO TOP */}
+      
+      {/* Automatically scroll to top on every route change */}
+      <ScrollToTop />
 
       <div className="min-h-screen bg-white flex flex-col">
+
+        {/* Desktop navigation only */}
         <Navigation />
 
+        {/* Page Content */}
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -36,9 +40,13 @@ function App() {
           </Routes>
         </main>
 
+        {/* Desktop footer */}
         <Footer />
-      </div>
 
+        {/* Mobile bottom navigation */}
+        <BottomNav />
+
+      </div>
     </BrowserRouter>
   );
 }
