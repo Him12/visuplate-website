@@ -44,7 +44,7 @@ export default function About() {
     },
     {
       name: 'Devang Pratap Singh',
-      role: 'CMO, Head of Customer Success and Marketing',
+      role: 'CMO & Co-Founder, Head of Customer Success and Marketing',
       bio: 'Dedicated to supporting restaurant partners and their growth',
     },
   ];
