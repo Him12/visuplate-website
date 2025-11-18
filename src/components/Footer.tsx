@@ -48,7 +48,7 @@ export default function Footer() {
 
               {/* X (Twitter) - updated logo */}
               <a
-                href="https://x.com/thevisuplate"
+                href="https://x.com/TheVisuPlate"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-emerald-600 transition-colors duration-200"
