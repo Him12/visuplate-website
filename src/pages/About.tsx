@@ -38,9 +38,14 @@ export default function About() {
 
   const team = [
     {
+      name: 'Gagan Kaushik',
+      role: 'CEO & Co-Founder',
+      bio: 'Visionary entrepreneur in restaurant technology.',
+    },
+    {
       name: 'Himanshu Kumar',
-      role: 'CEO, CTO & Co-Founder',
-      bio: 'Visionary entrepreneur in restaurant technology and Experience in AR technology with background at leading tech companies',
+      role: 'CTO & Co-Founder',
+      bio: 'Experience in AR technology with background at leading tech companies',
     },
     {
       name: 'Devang Pratap Singh',
@@ -116,13 +121,18 @@ export default function About() {
 
         <div className="mb-24">
           <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">Meet Our Team</h2>
-          <div className="grid md:grid-cols-2 gap-12 justify-center">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 justify-center">
 
             {team.map((member, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 border-2 border-gray-100 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 text-center">
+              <div
+                key={index}
+                className="bg-white rounded-2xl p-8 border-2 border-gray-100 hover:border-emerald-300 hover:shadow-lg transition-all duration-300 text-center"
+              >
                 <div className="w-20 h-20 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold">
-                  {member.name.split(' ').map(n => n[0]).join('')}
+                  {member.name.split(" ").map(n => n[0]).join("")}
                 </div>
+
                 <h3 className="text-lg font-bold text-gray-900 mb-1">{member.name}</h3>
                 <p className="text-emerald-600 font-semibold mb-3">{member.role}</p>
                 <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
@@ -130,6 +140,7 @@ export default function About() {
             ))}
           </div>
         </div>
+
 
         <div className="bg-gradient-to-br from-emerald-600 to-teal-600 rounded-3xl p-12 lg:p-16 text-white text-center">
           <h2 className="text-4xl font-bold mb-6">Join Us in Revolutionizing Dining</h2>
