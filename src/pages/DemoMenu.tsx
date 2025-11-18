@@ -70,7 +70,7 @@ export default function DemoMenu() {
               href="#"
               className="text-emerald-600 font-semibold hover:text-emerald-700"
             >
-              demo.thevisuplate.com/menu
+              https://him12.github.io/Web_Menu_QR_Demo/
             </a>
           </p>
         </div>
