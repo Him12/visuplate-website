@@ -69,23 +69,30 @@ export default function Hero() {
 
           <div className="relative">
             <div className="relative z-10 bg-white rounded-3xl shadow-2xl p-8 transform hover:scale-105 transition-transform duration-500">
-              <div className="aspect-[3/4] bg-gradient-to-br from-emerald-100 to-teal-100 rounded-2xl overflow-hidden">
-                <div className="w-full h-full bg-white p-6 rounded-3xl shadow-lg text-center">
+
+              <div className="aspect-[3/4] bg-gradient-to-br from-emerald-100 to-teal-100 rounded-2xl p-6 flex items-center justify-center">
+
+                <div className="w-full bg-white p-6 rounded-2xl shadow-xl text-center">
+
                   <p className="text-xl font-bold mb-4 text-gray-800">
-                    This is how your QR looks in the restaurant
+                    Menu QR looks in the restaurant
                   </p>
 
                   <img
-                    src="/visuplate-website/images/restaurant-qr-preview.png"
+                    src="/visuplate-website/images/New Demo QR.png"
                     alt="QR in restaurant"
-                    className="w-full rounded-2xl shadow-md"
+                    className="w-full rounded-xl shadow-md mb-4"
                   />
+
+                  <p className="text-lg font-semibold text-gray-700">
+                    SCAN ME TO SEE MAGIC ✨
+                  </p>
+
                 </div>
-
-
-
               </div>
+
             </div>
+
 
             <div className="absolute -top-4 -right-4 w-72 h-72 bg-emerald-200 rounded-full blur-3xl opacity-30"></div>
             <div className="absolute -bottom-4 -left-4 w-72 h-72 bg-teal-200 rounded-full blur-3xl opacity-30"></div>
