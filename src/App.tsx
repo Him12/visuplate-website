@@ -11,11 +11,17 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Cookies from "./pages/Cookies";
 
+import ScrollToTop from "./components/ScrollToTop";   // <-- ADD THIS
+
 function App() {
   return (
     <BrowserRouter basename="/visuplate-website">
+
+      <ScrollToTop />   {/* <-- FIX PAGE NOT SCROLLING TO TOP */}
+
       <div className="min-h-screen bg-white flex flex-col">
         <Navigation />
+
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -29,8 +35,10 @@ function App() {
             <Route path="/cookies" element={<Cookies />} />
           </Routes>
         </main>
+
         <Footer />
       </div>
+
     </BrowserRouter>
   );
 }

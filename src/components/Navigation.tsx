@@ -68,30 +68,35 @@ export default function Navigation() {
         </div>
 
         {isOpen && (
-          <div className="lg:hidden pb-6 border-t border-gray-200">
-            <div className="space-y-2 py-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`block px-4 py-2 rounded-lg font-medium transition-all duration-200 ${isActive(link.path)
-                    ? 'bg-emerald-100 text-emerald-700'
-                    : 'text-gray-700 hover:text-emerald-600 hover:bg-emerald-50'
-                    }`}
-                >
-                  {link.label}
+          <div className="lg:hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-40">
+            <div className="absolute top-20 left-0 w-full bg-white pb-6 border-t border-gray-200 shadow-xl">
+
+              <div className="space-y-2 py-4 px-4">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className={`block px-4 py-2 rounded-lg font-medium transition-all duration-200 ${isActive(link.path)
+                        ? "bg-emerald-100 text-emerald-700"
+                        : "text-gray-700 hover:text-emerald-600 hover:bg-emerald-50"
+                      }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+
+                <Link to="/contact" onClick={() => setIsOpen(false)}>
+                  <button className="w-full mt-4 px-4 py-2.5 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 transition-all duration-200">
+                    Request Demo
+                  </button>
                 </Link>
-              ))}
-              <Link to="/contact" className="w-full">
-                <button className="w-full mt-4 px-4 py-2.5 bg-emerald-600 text-white rounded-lg font-medium hover:bg-emerald-700 transition-all duration-200">
-                  Request Demo
-                </button>
-              </Link>
+              </div>
 
             </div>
           </div>
         )}
+
       </div>
     </nav>
   );
