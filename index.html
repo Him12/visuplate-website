@@ -5,16 +5,12 @@
     <link rel="icon" type="image/svg+xml" href="/visuplate-website/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Visuplate AR Digital Menu</title>
-
-    <meta property="og:image" content="https://bolt.new/static/og_default.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
   </head>
 
   <body>
     <div id="root"></div>
 
-    <!-- IMPORTANT FIX -->
-    <script type="module" src="/visuplate-website/src/main.tsx"></script>
+    <!-- CORRECT: Let Vite inject final bundle -->
+    <script type="module" src="./src/main.tsx"></script>
   </body>
 </html>
