@@ -6,9 +6,9 @@ export default function BottomNav() {
 
   const tabs = [
     { path: "/", label: "Home", icon: Home },
-    { path: "/demo-menu", label: "Menu", icon: BookOpen },
+    { path: "/demo-menu", label: "Demo Menu", icon: BookOpen },
     { path: "/about", label: "About", icon: Info },
-    { path: "/contact", label: "Contact", icon: Mail },
+    { path: "/contact", label: "Contact Us", icon: Mail },
   ];
 
   return (

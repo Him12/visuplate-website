@@ -122,10 +122,10 @@ export default function Contact() {
             <h3 className="text-lg font-bold text-gray-900 mb-2">WhatsApp Support</h3>
             <p className="text-gray-600 mb-4">Chat with us instantly on WhatsApp.</p>
             <a
-              href="https://wa.me/918377861214"
+              href="https://wa.me/918377861214?text=Hi%2C%0AI%20want%20to%20know%20more%20about%20VisuPlate%20QR%20menu.%20Can%20we%20connect%3F"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-emerald-600 font-semibold hover:text-emerald-700"
+              className="text-emerald-600 font-semibold hover:text-emerald-700 transition-colors"
             >
               +91-8377861214
             </a>
