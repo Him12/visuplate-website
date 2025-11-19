@@ -275,13 +275,20 @@ export default function MiniChatbot(): JSX.Element {
         <button
           onClick={() => setOpen(true)}
           aria-label="Open chat"
-          className="fixed bottom-20 right-6 ..."
+          className="
+    fixed 
+    bottom-24 sm:bottom-20 md:bottom-10 lg:bottom-10 
+    right-4 sm:right-6 
+    bg-white/90 backdrop-blur-sm border border-gray-200 
+    p-2 rounded-full shadow-xl hover:scale-105 
+    transition z-50
+  "
         >
-
           <div className="w-12 h-12 rounded-full bg-emerald-600 flex items-center justify-center text-white shadow">
             <MessageCircle className="w-6 h-6" />
           </div>
         </button>
+
       )}
 
       {/* CHAT WINDOW */}
