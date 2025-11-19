@@ -293,7 +293,28 @@ export default function MiniChatbot(): JSX.Element {
 
       {/* CHAT WINDOW */}
       {open && (
-        <div className="fixed bottom-20 right-6 w-80 md:w-96 bg-white/95 backdrop-blur-sm rounded-2xl border border-gray-200 shadow-2xl z-50 flex flex-col overflow-hidden animate-fade-in">
+        <div
+          className="
+    fixed 
+    bottom-24              /* stays above bottom nav */
+    right-2 sm:right-6 
+    w-[90vw] sm:w-80 md:w-96     /* full width on mobile */
+    max-h-[70vh] sm:max-h-[75vh] /* prevent overflow */
+    bg-white/95 
+    backdrop-blur-sm 
+    rounded-2xl 
+    border 
+    border-gray-200 
+    shadow-2xl 
+    z-50 
+    flex 
+    flex-col 
+    overflow-hidden 
+    animate-fade-in
+  "
+        >
+
+
 
           {/* Header */}
           <div className="flex items-center gap-3 px-4 py-3 bg-emerald-600 text-white">
