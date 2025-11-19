@@ -225,10 +225,23 @@ export default function Pricing() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-24 relative">
         {/* Header */}
         <header className="text-center mb-16 lg:mb-20 relative">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-green-500 text-white px-6 py-3 rounded-full text-sm font-semibold mb-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-            <Sparkles className="w-5 h-4" />
-            One-Time Setup + 12 Months Subscription • Professional Quality
-          </div>
+          <div
+  className="
+    pt-10 sm:pt-2                   /* ADD THIS LINE */
+    inline-flex items-center gap-2 
+    bg-gradient-to-r from-emerald-500 to-green-500 
+    text-white 
+    px-4 py-2 sm:px-6 sm:py-3 
+    rounded-full text-sm font-semibold 
+    mb-8 shadow-lg 
+    hover:shadow-xl transition-all duration-300 hover:scale-105
+  "
+>
+  <Sparkles className="w-5 h-4" />
+  One-Time Setup + 12 Months Subscription • Professional Quality
+</div>
+
+
           <h1
             className="text-4xl lg:text-6xl font-bold mb-4 p-3
              bg-gradient-to-r from-emerald-600 via-green-600 to-cyan-600
@@ -401,51 +414,97 @@ export default function Pricing() {
           <h2 className="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-12 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
             Complete Cost Breakdown
           </h2>
-          <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-emerald-100/80 overflow-hidden hover:shadow-2xl transition-all duration-500">
-            <div className="grid grid-cols-4 gap-4 p-6 bg-gradient-to-r from-emerald-50 to-green-50 border-b border-emerald-200/80">
+
+          <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-emerald-100/80 overflow-hidden">
+
+            {/* Desktop Header */}
+            <div className="hidden sm:grid grid-cols-4 gap-4 p-6 bg-gradient-to-r from-emerald-50 to-green-50 border-b border-emerald-200/80">
               <div className="font-bold text-gray-900">Plan</div>
               <div className="text-center font-bold text-gray-600">One-Time Setup</div>
               <div className="text-center font-bold text-blue-600">Monthly Subscription</div>
               <div className="text-center font-bold text-green-600">Total 12 Months</div>
             </div>
+
+            {/* Mobile Header */}
+            <div className="sm:hidden p-4 text-center font-semibold bg-emerald-50 border-b border-emerald-200">
+              Plan Cost Summary
+            </div>
+
             {plans.map((plan, index) => {
-              const setupCost = parseInt(plan.price.replace('₹', '').replace(',', ''));
-              const monthlyCost = parseInt(plan.monthlySubscription.replace('₹', '').replace('/month', ''));
-              const totalYearCost = setupCost + (monthlyCost * 12);
+              const setupCost = parseInt(plan.price.replace("₹", "").replace(",", ""));
+              const monthlyCost = parseInt(plan.monthlySubscription.replace("₹", "").replace("/month", ""));
+              const totalYearCost = setupCost + monthlyCost * 12;
 
               return (
-                <div
-                  key={index}
-                  className="grid grid-cols-4 gap-4 p-6 border-b border-gray-100/80 last:border-b-0 hover:bg-white transition-all duration-300"
-                >
-                  <div className="font-medium text-gray-700 hover:text-gray-900 transition-colors duration-300 flex items-center gap-3">
-                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${plan.bestseller
-                      ? "bg-purple-500 text-white"
-                      : plan.popular
-                        ? "bg-amber-500 text-white"
-                        : "bg-emerald-500 text-white"
-                      }`}>
-                      {plan.icon}
+                <div key={index}>
+                  {/* Desktop Row */}
+                  <div className="hidden sm:grid grid-cols-4 gap-4 p-6 border-b border-gray-100 hover:bg-white transition-all duration-300">
+                    <div className="font-medium text-gray-700 flex items-center gap-3">
+                      <div
+                        className={`w-8 h-8 rounded-lg flex items-center justify-center ${plan.bestseller
+                          ? "bg-purple-500 text-white"
+                          : plan.popular
+                            ? "bg-amber-500 text-white"
+                            : "bg-emerald-500 text-white"
+                          }`}
+                      >
+                        {plan.icon}
+                      </div>
+                      {plan.name}
                     </div>
-                    {plan.name}
+
+                    <div className="text-center">
+                      <div className="text-xl font-bold text-gray-900">{plan.price}</div>
+                      <div className="text-gray-500 text-sm">Development</div>
+                    </div>
+
+                    <div className="text-center">
+                      <div className="text-xl font-bold text-blue-600">{plan.monthlySubscription}</div>
+                      <div className="text-gray-500 text-sm">× 12 months</div>
+                    </div>
+
+                    <div className="text-center">
+                      <div className="text-xl font-bold text-green-600">₹{totalYearCost.toLocaleString()}</div>
+                      <div className="text-gray-500 text-sm">First year total</div>
+                    </div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-xl font-bold text-gray-900">{plan.price}</div>
-                    <div className="text-gray-500 text-sm">Development</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-xl font-bold text-blue-600">{plan.monthlySubscription}</div>
-                    <div className="text-gray-500 text-sm">× 12 months</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-xl font-bold text-green-600">₹{totalYearCost.toLocaleString()}</div>
-                    <div className="text-gray-500 text-sm">First year total</div>
+
+                  {/* Mobile Row */}
+                  <div className="sm:hidden p-4 space-y-3 border-b border-gray-100 bg-white">
+                    <div className="flex items-center justify-between">
+                      <span className="font-semibold text-gray-900 flex items-center gap-2">
+                        <div
+                          className={`w-7 h-7 rounded-lg flex items-center justify-center ${plan.bestseller
+                            ? "bg-purple-500 text-white"
+                            : plan.popular
+                              ? "bg-amber-500 text-white"
+                              : "bg-emerald-500 text-white"
+                            }`}
+                        >
+                          {plan.icon}
+                        </div>
+                        {plan.name}
+                      </span>
+
+                      <span className="font-bold text-gray-800">{plan.price}</span>
+                    </div>
+
+                    <div className="flex justify-between text-blue-700">
+                      <span className="text-sm">Monthly Subscription:</span>
+                      <span className="font-semibold">{plan.monthlySubscription}</span>
+                    </div>
+
+                    <div className="flex justify-between text-green-700">
+                      <span className="text-sm">Total 12 Months:</span>
+                      <span className="font-bold">₹{totalYearCost.toLocaleString()}</span>
+                    </div>
                   </div>
                 </div>
               );
             })}
           </div>
         </section>
+
 
         {/* FAQ Section */}
         <section className="max-w-4xl mx-auto mb-20">

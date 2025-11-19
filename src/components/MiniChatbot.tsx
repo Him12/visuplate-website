@@ -222,8 +222,7 @@ export default function MiniChatbot(): JSX.Element {
   const sendLead = (name: string, phone: string, restaurant?: string) => {
     const subject = encodeURIComponent("VisuPlate Demo Request / Callback");
     const body = encodeURIComponent(
-      `Demo request from chatbot:\nName: ${name}\nPhone: ${phone}\nRestaurant: ${
-        restaurant ?? "—"
+      `Demo request from chatbot:\nName: ${name}\nPhone: ${phone}\nRestaurant: ${restaurant ?? "—"
       }\nPlease contact ASAP.`
     );
 
@@ -231,8 +230,7 @@ export default function MiniChatbot(): JSX.Element {
     window.open(mailto, "_blank");
 
     openWhatsAppToAll(
-      `Demo request: Name: ${name}, Phone: ${phone}, Restaurant: ${
-        restaurant ?? "—"
+      `Demo request: Name: ${name}, Phone: ${phone}, Restaurant: ${restaurant ?? "—"
       }`
     );
 
@@ -277,8 +275,9 @@ export default function MiniChatbot(): JSX.Element {
         <button
           onClick={() => setOpen(true)}
           aria-label="Open chat"
-          className="fixed bottom-6 right-6 bg-white/90 backdrop-blur-sm border border-gray-200 p-2 rounded-full shadow-xl hover:scale-105 transition z-50"
+          className="fixed bottom-20 right-6 ..."
         >
+
           <div className="w-12 h-12 rounded-full bg-emerald-600 flex items-center justify-center text-white shadow">
             <MessageCircle className="w-6 h-6" />
           </div>
