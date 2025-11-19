@@ -30,7 +30,7 @@ export default function Cookies() {
         <p className="text-gray-600 mt-10">
           Questions? Contact us at{" "}
           <a href="mailto:hello@thevisuplate.com" className="text-emerald-600">
-            hello@thevisuplate.com
+            thevisuplate@gmail.com
           </a>
           .
         </p>

@@ -39,13 +39,13 @@ export default function About() {
   const team = [
     {
       name: 'Gagan Kaushik',
-      role: 'CEO & Co-Founder',
+      role: 'CEO & Founder',
       bio: 'Visionary entrepreneur in restaurant technology.',
       image: "/visuplate-website/images/CEO.jpg",
     },
     {
       name: 'Himanshu Kumar',
-      role: 'CTO & Co-Founder',
+      role: 'CTO & Founder',
       bio: 'Experience in AR technology with background at leading tech companies',
       image: "/visuplate-website/images/CTO.jpg",
     },

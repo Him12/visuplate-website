@@ -64,17 +64,21 @@ export default function DemoMenu() {
             </p>
           </div>
 
-          <p className="text-gray-600 mt-8">
-            Or try our web demo:{" "}
+          <div className="mt-10">
             <a
               href="https://him12.github.io/Web_Menu_QR_Demo/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-emerald-600 font-semibold hover:text-emerald-700"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full 
+               bg-gradient-to-r from-emerald-600 to-teal-500 
+               text-white font-semibold shadow-lg shadow-emerald-200 
+               hover:scale-105 hover:shadow-xl hover:from-emerald-700 hover:to-teal-600 
+               transition-all duration-300"
             >
-              https://him12.github.io/Web_Menu_QR_Demo/
+              🌐 Try Our Web Demo
             </a>
-          </p>
+          </div>
+
 
         </div>
 
