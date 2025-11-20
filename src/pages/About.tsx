@@ -41,19 +41,19 @@ export default function About() {
       name: 'Gagan Kaushik',
       role: 'CEO & Founder',
       bio: 'Visionary entrepreneur in restaurant technology.',
-      image: "/visuplate-website/images/CEO.jpg",
+      image: "/images/CEO.jpg",
     },
     {
       name: 'Himanshu Kumar',
       role: 'CTO & Founder',
       bio: 'Experience in AR technology with background at leading tech companies',
-      image: "/visuplate-website/images/CTO.jpg",
+      image: "/images/CTO.jpg",
     },
     {
       name: 'Devang Pratap Singh',
       role: 'CMO & Co-Founder, Head of Customer Success and Marketing',
       bio: 'Dedicated to supporting restaurant partners and their growth',
-      image: "/visuplate-website/images/CMO.png",
+      image: "/images/CMO.png",
     },
   ];
 

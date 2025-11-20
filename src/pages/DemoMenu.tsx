@@ -11,9 +11,9 @@ const menuItems = [
     price: "",
     description:
       "Tandoori paneer, mint chutney. **Vegetarian delight**",
-    image: "/visuplate-website/images/Spicy Paneer Kebab.png",
-    videoPath: "/visuplate-website/videos/Spicy Paneer Kebab.mp4",
-    modelPath: "/visuplate-website/models/Spicy Paneer Kebab.glb",
+    image: "/images/Spicy Paneer Kebab.png",
+    videoPath: "/videos/Spicy Paneer Kebab.mp4",
+    modelPath: "/models/Spicy Paneer Kebab.glb",
   },
   {
     id: 2,
@@ -22,9 +22,9 @@ const menuItems = [
     price: "",
     description:
       "Red wine jus, truffle mash. **⏳ 3-hour preparation**",
-    image: "/visuplate-website/images/Slow Cooked Short Ribs.png",
-    videoPath: "/visuplate-website/videos/Slow Cooked Short Ribs.mp4",
-    modelPath: "/visuplate-website/models/Slow Cooked Short Ribs.glb",
+    image: "/images/Slow Cooked Short Ribs.png",
+    videoPath: "/videos/Slow Cooked Short Ribs.mp4",
+    modelPath: "/models/Slow Cooked Short Ribs.glb",
   },
   {
     id: 3,
@@ -33,9 +33,9 @@ const menuItems = [
     price: "",
     description:
       "Grilled chicken skewers, tare glaze. **🍢 Today's special**",
-    image: "/visuplate-website/images/Yakitori Skewers.png",
-    videoPath: "/visuplate-website/videos/Yakitori Skewers.mp4",
-    modelPath: "/visuplate-website/models/Yakitori Skewers.glb",
+    image: "/images/Yakitori Skewers.png",
+    videoPath: "/videos/Yakitori Skewers.mp4",
+    modelPath: "/models/Yakitori Skewers.glb",
   },
 ];
 
@@ -58,7 +58,7 @@ export default function DemoMenu() {
           </p>
 
           <div className="inline-block bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-8 border-2 border-emerald-200">
-            <img src="/visuplate-website/images/New Demo QR.png" alt="QR" className="w-64 h-64" />
+            <img src="/images/New Demo QR.png" alt="QR" className="w-64 h-64" />
             <p className="text-sm text-gray-600 mt-4">
               Scan with your phone camera
             </p>

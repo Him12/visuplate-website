@@ -21,7 +21,7 @@ export default function Navigation() {
           {/* LOGO */}
           <Link to="/" className="flex items-center flex-shrink-0">
             <img
-              src="/visuplate-website/images/our logo.png"
+              src="/images/our logo.png"
               alt="The VisuPlate Logo"
               className="h-14 w-auto object-contain"
             />

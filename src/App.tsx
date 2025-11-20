@@ -23,17 +23,14 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  return (
-    <BrowserRouter basename="/visuplate-website">
+    return (
+  <BrowserRouter>
       <ScrollToTop />
 
-      {/* Light background for the entire app */}
       <div className={`min-h-screen bg-gradient-to-br from-slate-50 to-emerald-50 flex flex-col transition-opacity duration-1000 ${loaded ? 'opacity-100' : 'opacity-0'}`}>
-        
-        {/* Background elements - FIXED: Removed fixed positioning that was covering content */}
+
         <div className="fixed inset-0 bg-gradient-to-br from-white via-slate-50 to-emerald-100/30 -z-10"></div>
-        
-        {/* Floating particles - FIXED: Lower z-index and reduced opacity */}
+
         <div className="fixed inset-0 opacity-20 -z-10">
           {[...Array(15)].map((_, i) => (
             <div 
@@ -49,13 +46,10 @@ function App() {
           ))}
         </div>
 
-        {/* Main content with proper z-index */}
         <div className="relative z-10 flex flex-col min-h-screen">
-          
-          {/* Desktop navigation */}
+
           <Navigation />
 
-          {/* Page Content - FIXED: This area is now fully clickable */}
           <main className="flex-grow relative z-20">
             <Routes>
               <Route path="/" element={<Home />} />
@@ -70,16 +64,14 @@ function App() {
             </Routes>
           </main>
 
-          {/* Desktop footer - FIXED: Now visible and clickable */}
           <Footer />
 
-          {/* Mobile bottom navigation */}
           <BottomNav />
           <MiniChatbot />
         </div>
       </div>
-    </BrowserRouter>
-  );
+  </BrowserRouter>
+);
 }
 
 export default App;

@@ -79,7 +79,7 @@ export default function Hero() {
                   </p>
 
                   <img
-                    src="/visuplate-website/images/New Demo QR.png"
+                    src="/images/New Demo QR.png"
                     alt="QR in restaurant"
                     className="w-full rounded-xl shadow-md mb-4"
                   />
