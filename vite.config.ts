@@ -6,5 +6,6 @@ export default defineConfig({
   base: "./",          // ✔ FIXES ALL 404 ERRORS
   build: {
     outDir: "docs",    // GitHub Pages deploys from /docs
+    assetsDir: "",   // <--- CRITICAL
   },
 });
