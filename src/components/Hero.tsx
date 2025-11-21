@@ -51,7 +51,7 @@ export default function Hero() {
 
             <div className="flex items-center space-x-8 pt-4">
               <div>
-                <div className="text-3xl font-bold text-gray-900">5+</div>
+                <div className="text-3xl font-bold text-gray-900">15+</div>
                 <div className="text-sm text-gray-600">Restaurants</div>
               </div>
               <div className="w-px h-12 bg-gray-300"></div>

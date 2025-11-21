@@ -80,7 +80,7 @@ export default function About() {
                 Founded in 2025, we started with a mission to eliminate printed menus while creating an engaging, interactive experience that excites customers and increases order values.
               </p>
               <p>
-                Today, we partner with over 5+ restaurants across multiple countries, serving millions of happy diners who experience our innovative AR and video-powered menus every day.
+                Today, we partner with over 15+ restaurants in different states of india, serving hundreds of happy diners who experience our innovative AR and video-powered menus every day.
               </p>
               <p>
                 We're committed to sustainability, technology, and creating real value for both restaurants and their customers.
@@ -90,7 +90,7 @@ export default function About() {
 
           <div className="bg-gradient-to-br from-emerald-100 to-teal-100 rounded-3xl p-12 h-96 flex items-center justify-center">
             <div className="text-center">
-              <div className="text-6xl font-bold text-emerald-600 mb-4">5+</div>
+              <div className="text-6xl font-bold text-emerald-600 mb-4">15+</div>
               <div className="text-2xl font-semibold text-gray-800 mb-2">Restaurants</div>
               <div className="text-gray-600 mb-8">Trusted worldwide</div>
               <div className="space-y-3 text-left">

@@ -98,7 +98,7 @@ export default function Pricing() {
       icon: <Zap className="w-6 h-6" />,
       price: "₹5,999",
       monthlySubscription: "₹599/month",
-      includes: "Essential digital menu with basic AR features",
+      includes: "Essential digital menu with upto 10 bestseller AR/video features",
       terms: "45% advance | Remaining after delivery",
       features: [
         "Up to 10 AR food previews",
@@ -106,10 +106,10 @@ export default function Pricing() {
         "5 QR codes included",
         "Basic menu analytics",
         "Email support",
-        "15 days delivery",
+        "21 days delivery",
         "Mobile-responsive design",
         "12 months hosting included",
-        "Monthly subscription: ₹599 for 12 months"
+        "Monthly subscription: ₹599/months"
       ]
     },
     {
@@ -126,11 +126,10 @@ export default function Pricing() {
         "Advanced analytics dashboard",
         "Priority support",
         "Social media integration",
-        "15 days delivery",
+        "21 days delivery",
         "Mobile-responsive design",
         "12 months hosting included",
-        "SEO optimization",
-        "Monthly subscription: ₹699 for 12 months"
+        "Monthly subscription: ₹699/months"
       ],
       popular: true
     },
@@ -145,17 +144,14 @@ export default function Pricing() {
         "Up to 50 AR food previews",
         "Up to 50 video previews",
         "10 QR codes included",
-        "Premium analytics with insights",
         "24/7 priority support",
         "Custom domain support",
         "Social media integration",
         "10 days premium delivery",
         "Mobile-responsive design",
         "12 months hosting included",
-        "Advanced SEO optimization",
-        "Monthly performance reports",
         "Custom branding options",
-        "Monthly subscription: ₹999 for 12 months"
+        "Monthly subscription: ₹999/months"
       ],
       bestseller: true
     },
@@ -164,11 +160,11 @@ export default function Pricing() {
   const extraNotes: Note[] = [
     {
       title: "Payment Structure",
-      content: "Pay the plan price upfront for development and setup. Then pay the monthly subscription (₹599/₹699/₹999) for 12 months which includes hosting, support, and maintenance."
+      content: "Pay the plan price upfront for development and setup. Then pay the monthly subscription (₹599/₹699/₹999) per month which includes hosting, support, and maintenance."
     },
     {
       title: "What's Included in Monthly Subscription?",
-      content: "Monthly subscription includes: Cloud hosting, SSL certificate, technical support, security updates, feature updates, and 99.9% uptime guarantee. Required for 12 months."
+      content: "Monthly subscription includes: Cloud hosting, SSL certificate, technical support, security updates, feature updates, and 99.9% uptime guarantee. Required per month."
     },
     {
       title: "Additional QR Codes",
@@ -226,7 +222,7 @@ export default function Pricing() {
         {/* Header */}
         <header className="text-center mb-16 lg:mb-20 relative">
           <div
-  className="
+            className="
     pt-10 sm:pt-2                   /* ADD THIS LINE */
     inline-flex items-center gap-2 
     bg-gradient-to-r from-emerald-500 to-green-500 
@@ -236,10 +232,10 @@ export default function Pricing() {
     mb-8 shadow-lg 
     hover:shadow-xl transition-all duration-300 hover:scale-105
   "
->
-  <Sparkles className="w-5 h-4" />
-  One-Time Setup + 12 Months Subscription • Professional Quality
-</div>
+          >
+            <Sparkles className="w-5 h-4" />
+            One-Time Setup + 12 Months Subscription • Professional Quality
+          </div>
 
 
           <h1
@@ -271,11 +267,13 @@ export default function Pricing() {
             {plans.map((plan) => (
               <div
                 key={plan.name}
-                className={`relative group ${plan.bestseller ? "lg:scale-105 lg:-translate-y-4" : ""
-                  } transition-all duration-500`}
+                className={`relative group h-full flex flex-col 
+              transition-all duration-500 
+              ${plan.bestseller ? "lg:scale-105 lg:-translate-y-4" : ""}`}
                 onMouseEnter={() => setHoveredCard(plan.name)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
+
                 {/* Bestseller Badge */}
                 {plan.bestseller && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
@@ -313,7 +311,7 @@ export default function Pricing() {
                   }`}></div>
 
                 <div
-                  className={`relative h-full bg-white/80 backdrop-blur-sm rounded-3xl p-8 border-2 shadow-2xl transition-all duration-500 group-hover:shadow-2xl group-hover:scale-105 ${plan.bestseller
+                  className={`relative h-full flex flex-col bg-white/80 backdrop-blur-sm rounded-3xl p-8 border-2 shadow-2xl transition-all duration-500 group-hover:shadow-2xl group-hover:scale-105 ${plan.bestseller
                     ? "border-purple-300/80 bg-gradient-to-b from-white/90 to-purple-50/70 group-hover:border-purple-400"
                     : plan.popular
                       ? "border-amber-300/80 bg-gradient-to-b from-white/90 to-amber-50/70 group-hover:border-amber-400"
@@ -350,16 +348,17 @@ export default function Pricing() {
                         <p className="text-blue-700 font-semibold text-lg">
                           + {plan.monthlySubscription}
                         </p>
-                        <p className="text-blue-600 text-sm">for 12 months</p>
+                        <p className="text-blue-600 text-sm">per month</p>
                       </div>
                       <p className="text-gray-500 text-sm group-hover:text-gray-600 transition-colors duration-300">
-                        One-time setup • 12 months subscription included
+                        One-time setup cost then monthly subscription
                       </p>
                     </div>
                   </div>
 
                   {/* Features List */}
-                  <div className="relative space-y-3 mb-8">
+                  <div className="relative space-y-3 mb-8 flex-grow">
+
                     {plan.features.map((feature, featureIndex) => (
                       <div
                         key={featureIndex}
@@ -608,8 +607,26 @@ export default function Pricing() {
 
       {/* Lead Capture Form Modal */}
       {showForm && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-3xl p-8 max-w-md w-full mx-auto shadow-2xl border border-emerald-100/80 animate-scaleIn">
+        <div
+          className="
+    fixed top-0 left-0 w-full h-full
+    bg-black/50 backdrop-blur-sm 
+    z-50 p-4 
+    flex items-center justify-center
+  "
+        >
+
+          <div
+  className="
+    bg-white rounded-2xl 
+    p-5
+    w-full max-w-sm mx-auto 
+    shadow-xl border border-emerald-100
+    animate-scaleIn
+    max-h-[80vh] overflow-y-auto
+  "
+          >
+
             <div className="flex justify-between items-center mb-6">
               <h3 className="text-2xl font-bold text-gray-900">
                 Get {showForm} Plan
