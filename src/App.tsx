@@ -14,7 +14,10 @@ import Cookies from "./pages/Cookies";
 import BottomNav from "./components/BottomNav";
 import ScrollToTop from "./components/ScrollToTop";
 import MiniChatbot from "./components/MiniChatbot";
-import ApplicationForm from "./components/ApplicationForm";
+import JobDetails from "./pages/JobDetails";
+import Apply from "./pages/Apply";
+
+
 
 
 function App() {
@@ -25,8 +28,8 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-    return (
-  <BrowserRouter>
+  return (
+    <BrowserRouter>
       <ScrollToTop />
 
       <div className={`min-h-screen bg-gradient-to-br from-slate-50 to-emerald-50 flex flex-col transition-opacity duration-1000 ${loaded ? 'opacity-100' : 'opacity-0'}`}>
@@ -35,7 +38,7 @@ function App() {
 
         <div className="fixed inset-0 opacity-20 -z-10">
           {[...Array(15)].map((_, i) => (
-            <div 
+            <div
               key={i}
               className="absolute w-1 h-1 bg-emerald-400 rounded-full animate-float"
               style={{
@@ -58,14 +61,19 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/demo-menu" element={<DemoMenu />} />
+
               <Route path="/careers" element={<Careers />} />
+              <Route path="/careers/:id" element={<JobDetails />} />
+
+              {/* Only THIS should exist */}
+              <Route path="/apply" element={<Apply />} />
+
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/cookies" element={<Cookies />} />
-              <Route path="/apply" element={<ApplicationForm />} />
-
             </Routes>
+
           </main>
 
           <Footer />
@@ -74,8 +82,8 @@ function App() {
           <MiniChatbot />
         </div>
       </div>
-  </BrowserRouter>
-);
+    </BrowserRouter>
+  );
 }
 
 export default App;

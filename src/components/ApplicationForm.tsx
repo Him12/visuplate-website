@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
 
@@ -13,62 +13,82 @@ interface FormState {
   resume_url: string;
 }
 
-/** Allowed fields for mapping */
 type FormField = keyof FormState;
 
-export default function ApplicationForm() {
+export default function ApplicationForm({ jobTitle }: { jobTitle?: string }) {
   const [submitted, setSubmitted] = useState(false);
 
   const [form, setForm] = useState<FormState>({
     name: "",
     email: "",
-    role: "",
+    role: jobTitle ?? "",
     portfolio: "",
     why: "",
     message: "",
     resume_url: ""
   });
 
-  /** Handle text inputs safely */
+  /** Auto-fill role when coming from a job card */
+  useEffect(() => {
+    if (jobTitle) {
+      setForm((prev) => ({ ...prev, role: jobTitle }));
+    }
+  }, [jobTitle]);
+
+  /** Handle safe input typing */
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const field = e.target.name as FormField;
-    setForm({ ...form, [field]: e.target.value });
+    setForm((prev) => ({ ...prev, [field]: e.target.value }));
   };
 
-  /** Submit EmailJS form */
+  /** Handle submission */
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    await emailjs.send(
-      "service_77qf29o",
-      "template_el3mphs",
-      {
-        ...form,
-        time: new Date().toLocaleString(),
-        resume_file: "",       // no file
-        resume_filename: ""    // no file
-      },
-      "B6wKR7DPbmnbWCbbz"
-    );
+    try {
+      await emailjs.send(
+        "service_77qf29o",
+        "template_el3mphs",
+        {
+          ...form,
+          job_title: jobTitle || form.role,
+          time: new Date().toLocaleString(),
+          resume_file: "",
+          resume_filename: ""
+        },
+        "B6wKR7DPbmnbWCbbz"
+      );
 
-    setSubmitted(true);
+      setSubmitted(true);
+    } catch {
+      alert("Failed to send application. Try again later.");
+    }
   };
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="bg-white max-w-lg mx-auto p-8 rounded-3xl shadow-xl border mt-28"
+      className="
+        bg-white
+        w-full
+        max-w-md
+        mx-auto
+        p-8
+        rounded-3xl
+        shadow-xl
+        border
+      "
     >
       {!submitted ? (
         <>
-          <h2 className="text-2xl font-bold mb-4 text-emerald-700 text-center">
-            Early Team Application
+          <h2 className="text-2xl font-bold mb-6 text-emerald-700 text-center">
+            {jobTitle ? `Apply for ${jobTitle}` : "Early Team Application"}
           </h2>
 
-          <form onSubmit={sendEmail} className="space-y-4">
+          <form onSubmit={sendEmail} className="space-y-5">
             {(["name", "email", "role", "portfolio", "resume_url"] as FormField[])
               .map((field) => (
                 <input
@@ -81,7 +101,16 @@ export default function ApplicationForm() {
                       ? "Resume Link (Google Drive, Notion, etc.)"
                       : field.charAt(0).toUpperCase() + field.slice(1)
                   }
-                  className="w-full border p-3 rounded-xl"
+                  className="
+                    w-full 
+                    border 
+                    p-3 
+                    rounded-xl 
+                    text-gray-700 
+                    focus:ring-2 
+                    focus:ring-emerald-500 
+                    focus:outline-none
+                  "
                   type={field === "email" ? "email" : "text"}
                   required={["name", "email", "role"].includes(field)}
                 />
@@ -91,8 +120,18 @@ export default function ApplicationForm() {
               name="why"
               value={form.why}
               onChange={handleChange}
-              placeholder="Why do you want to join the early team?"
-              className="w-full border p-3 rounded-xl"
+              placeholder="Why do you want this role?"
+              className="
+                w-full 
+                border 
+                p-3 
+                rounded-xl 
+                text-gray-700 
+                focus:ring-2 
+                focus:ring-emerald-500 
+                focus:outline-none
+              "
+              rows={3}
             />
 
             <textarea
@@ -100,12 +139,31 @@ export default function ApplicationForm() {
               value={form.message}
               onChange={handleChange}
               placeholder="Additional message"
-              className="w-full border p-3 rounded-xl"
+              className="
+                w-full 
+                border 
+                p-3 
+                rounded-xl 
+                text-gray-700 
+                focus:ring-2 
+                focus:ring-emerald-500 
+                focus:outline-none
+              "
+              rows={3}
             />
 
             <button
               type="submit"
-              className="w-full bg-emerald-600 text-white py-3 rounded-xl"
+              className="
+                w-full 
+                bg-emerald-600 
+                hover:bg-emerald-700 
+                text-white 
+                py-3 
+                rounded-xl 
+                font-semibold 
+                transition
+              "
             >
               Submit Application
             </button>
@@ -116,8 +174,8 @@ export default function ApplicationForm() {
           <h2 className="text-3xl font-bold text-emerald-700 mb-4">
             🎉 Application Submitted!
           </h2>
-          <p className="text-gray-700 mb-6">
-            Thank you! Our team will contact you after screening.
+          <p className="text-gray-700 text-lg">
+            Thank you — our team will contact you after screening.
           </p>
         </div>
       )}
