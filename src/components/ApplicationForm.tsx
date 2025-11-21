@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
 
@@ -29,9 +29,6 @@ export default function ApplicationForm() {
     resume_url: ""
   });
 
-  const [resumeFile, setResumeFile] = useState<File | null>(null);
-  const [fileError, setFileError] = useState<string | null>(null);
-
   /** Handle text inputs safely */
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -40,46 +37,9 @@ export default function ApplicationForm() {
     setForm({ ...form, [field]: e.target.value });
   };
 
-  /** Convert file → base64 */
-  const fileToBase64 = (file: File): Promise<string> =>
-    new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = () => resolve(reader.result as string);
-      reader.onerror = () => reject("File reading failed");
-      reader.readAsDataURL(file);
-    });
-
-  /** File upload handler */
-  const onFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFileError(null);
-
-    const file = e.target.files?.[0] ?? null;
-
-    if (!file) {
-      setResumeFile(null);
-      return;
-    }
-
-    if (file.size > 50 * 1024) {
-      setFileError("File must be under 50 KB");
-      setResumeFile(null);
-      return;
-    }
-
-    setResumeFile(file);
-  };
-
-  /** Submit & send EmailJS request */
+  /** Submit EmailJS form */
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    let base64 = "";
-    let filename = "";
-
-    if (resumeFile) {
-      base64 = await fileToBase64(resumeFile);
-      filename = resumeFile.name;
-    }
 
     await emailjs.send(
       "service_77qf29o",
@@ -87,8 +47,8 @@ export default function ApplicationForm() {
       {
         ...form,
         time: new Date().toLocaleString(),
-        resume_file: base64,
-        resume_filename: filename
+        resume_file: "",       // no file
+        resume_filename: ""    // no file
       },
       "B6wKR7DPbmnbWCbbz"
     );
@@ -109,8 +69,8 @@ export default function ApplicationForm() {
           </h2>
 
           <form onSubmit={sendEmail} className="space-y-4">
-            {(["name", "email", "role", "portfolio", "resume_url"] as FormField[]).map(
-              (field) => (
+            {(["name", "email", "role", "portfolio", "resume_url"] as FormField[])
+              .map((field) => (
                 <input
                   key={field}
                   name={field}
@@ -118,15 +78,14 @@ export default function ApplicationForm() {
                   onChange={handleChange}
                   placeholder={
                     field === "resume_url"
-                      ? "Resume URL (optional)"
+                      ? "Resume Link (Google Drive, Notion, etc.)"
                       : field.charAt(0).toUpperCase() + field.slice(1)
                   }
                   className="w-full border p-3 rounded-xl"
                   type={field === "email" ? "email" : "text"}
                   required={["name", "email", "role"].includes(field)}
                 />
-              )
-            )}
+              ))}
 
             <textarea
               name="why"
@@ -143,30 +102,6 @@ export default function ApplicationForm() {
               placeholder="Additional message"
               className="w-full border p-3 rounded-xl"
             />
-
-            <div>
-              <label className="block text-sm mb-2">
-                Upload Resume (Max size: 50 KB) — optional
-              </label>
-
-              <input
-                type="file"
-                accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
-                onChange={onFileChange}
-                className="w-full border p-2 rounded-xl"
-              />
-
-              {fileError && (
-                <p className="text-sm text-red-500 mt-2">{fileError}</p>
-              )}
-
-              {resumeFile && !fileError && (
-                <p className="text-sm text-gray-600 mt-2">
-                  Attached: {resumeFile.name} (
-                  {Math.round(resumeFile.size / 1024)} KB)
-                </p>
-              )}
-            </div>
 
             <button
               type="submit"
