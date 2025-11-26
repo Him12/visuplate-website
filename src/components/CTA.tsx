@@ -97,7 +97,7 @@ export default function CTA() {
                   </div>
                   <div>
                     <div className="text-sm text-emerald-100">Call us</div>
-                    <div className="font-semibold">+91-8377861214</div>
+                    <div className="font-semibold">+91-8851796110</div>
                   </div>
                 </div>
               </div>
