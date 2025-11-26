@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="bg-gray-900 text-gray-300">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-16">
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
 
           {/* COLUMN 1 — LOGO + TEXT + SOCIAL ICONS */}
           <div>
@@ -42,11 +42,11 @@ export default function Footer() {
                 aria-label="Instagram"
               >
                 <svg fill="currentColor" viewBox="0 0 24 24" className="w-5 h-5 text-white">
-                  <path d="M12 2.163c3.204 0 3.584.013 4.85.07 1.366.062 2.633.35 3.608 1.325.975.975 1.263 2.242 1.325 3.608.057 1.266.07 1.646.07 4.85s-.013 3.584-.07 4.85c-.062 1.366-.35 2.633-1.325 3.608-.975.975-2.242 1.263-3.608 1.325-1.266.057-1.646.07-4.85.07s-3.584-.013-4.85-.07c-1.366-.062-2.633-.35-3.608-1.325-.975-.975-1.263-2.242-1.325-3.608-.057-1.266-.07-1.646-.07-4.85s.013-3.584.07-4.85c.062-1.366.35-2.633 1.325-3.608.975-.975 2.242-1.263 3.608-1.325 1.266-.057 1.646-.07 4.85-.07zm0 3.675a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z" />
+                  <path d="M12 2.163c3.204 0 3.584.013 4.85.07 1.366.062 2.633.35 3.608 1.325.975.975 1.263 2.242 1.325 3.608.057 1.266.07 1.646.07 4.85s-.013 3.584-.07 4.85c-.062 1.366-.35 2.633-1.325 3.608-.975.975-2.242 1.263-3.608 1.325-1.266.057-1.646.07-4.85.07s-3.584-.013-4.85-.07c-1.366-.062-2.633-.35-3.608-1.325-.975-.975-1.263-2.242-1.325-3.608-.057-1.266-.07-1.646-.07-4.85s.013-3.584.07-4.85c.062-1.366.35-2.633 1.325-3.608.975-.975 2.242-1.263 3.608-1.325 1.266-.057 1.646-.07 4.85-.07zm0 3.675a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z" />
                 </svg>
               </a>
 
-              {/* X (Twitter) - updated logo */}
+              {/* X */}
               <a
                 href="https://x.com/TheVisuPlate"
                 target="_blank"
@@ -59,7 +59,7 @@ export default function Footer() {
                 </svg>
               </a>
 
-              {/* LinkedIn - last one */}
+              {/* LinkedIn */}
               <a
                 href="https://www.linkedin.com/in/the-visu-plate-1308ab38b/"
                 target="_blank"
@@ -68,7 +68,7 @@ export default function Footer() {
                 aria-label="LinkedIn"
               >
                 <svg fill="currentColor" viewBox="0 0 24 24" className="w-5 h-5 text-white">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z" />
                 </svg>
               </a>
             </div>
@@ -94,7 +94,17 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* COLUMN 4 — CONTACT */}
+          {/* COLUMN 4 — BLOGS (NEW) */}
+          <div>
+            <h3 className="text-white font-bold mb-6">Blogs</h3>
+            <ul className="space-y-3">
+              <li><Link to="/digital-menu" className="hover:text-emerald-400">Digital Menu</Link></li>
+              <li><Link to="/qr-menu" className="hover:text-emerald-400">QR Menu</Link></li>
+              <li><Link to="/online-menu" className="hover:text-emerald-400">Online Menu</Link></li>
+            </ul>
+          </div>
+
+          {/* COLUMN 5 — CONTACT */}
           <div>
             <h3 className="text-white font-bold mb-6">Contact</h3>
             <ul className="space-y-4">
@@ -113,8 +123,8 @@ export default function Footer() {
                 <Phone className="w-5 h-5 text-emerald-400 mt-1" />
                 <div>
                   <div className="text-sm text-gray-400">Phone</div>
-                  <a href="https://wa.me/918377861214" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400">
-                    +91-8377861214
+                  <a href="https://wa.me/918851796110" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400">
+                    +91-8851796110
                   </a>
                 </div>
               </li>

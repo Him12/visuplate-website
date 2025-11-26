@@ -16,6 +16,9 @@ import ScrollToTop from "./components/ScrollToTop";
 import MiniChatbot from "./components/MiniChatbot";
 import JobDetails from "./pages/JobDetails";
 import Apply from "./pages/Apply";
+import DigitalMenu from "./pages/DigitalMenu";
+import QRMenu from "./pages/QRMenu";
+import OnlineMenu from "./pages/OnlineMenu";
 
 
 
@@ -72,6 +75,10 @@ function App() {
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/cookies" element={<Cookies />} />
+              <Route path="/digital-menu" element={<DigitalMenu />} />
+              <Route path="/qr-menu" element={<QRMenu />} />
+              <Route path="/online-menu" element={<OnlineMenu />} />
+
             </Routes>
 
           </main>
