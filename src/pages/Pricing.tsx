@@ -49,11 +49,12 @@ const SavingsCalculator = () => {
     competitorSetup: number;
     competitorMonthly: number;
   }> = {
-    silver: { ourSetup: 5999, ourMonthly: 599, competitorSetup: 15000, competitorMonthly: 1499 },
-    platinum: { ourSetup: 9999, ourMonthly: 999, competitorSetup: 25000, competitorMonthly: 2499 },
-    'silver-games': { ourSetup: 8999, ourMonthly: 899, competitorSetup: 20000, competitorMonthly: 1999 },
-    'platinum-games': { ourSetup: 14999, ourMonthly: 1499, competitorSetup: 35000, competitorMonthly: 2999 }
+    silver: { ourSetup: 9999, ourMonthly: 1399, competitorSetup: 20000, competitorMonthly: 1999 },
+    platinum: { ourSetup: 17999, ourMonthly: 2299, competitorSetup: 35000, competitorMonthly: 2999 },
+    'silver-games': { ourSetup: 14999, ourMonthly: 1999, competitorSetup: 25000, competitorMonthly: 2499 },
+    'platinum-games': { ourSetup: 22999, ourMonthly: 2799, competitorSetup: 45000, competitorMonthly: 3999 }
   };
+
 
   const calculateSavings = () => {
     const price = prices[selectedPlan];
@@ -239,8 +240,8 @@ export default function Pricing() {
     {
       name: "Silver",
       icon: <Zap className="w-5 h-5 sm:w-6 sm:h-6" />,
-      price: "₹5,999",
-      monthlySubscription: "₹599/month",
+      price: "₹9,999",
+      monthlySubscription: "₹1,399/month",
       includes: "Essential digital menu - Perfect for getting started",
       terms: "45% advance | Remaining after delivery",
       features: [
@@ -251,7 +252,7 @@ export default function Pricing() {
         "Email Support",
         "15-Day Delivery",
         "12 Months Hosting Included",
-        "Monthly subscription: ₹599/month"
+        "Monthly subscription: ₹1,399/month"
       ],
       category: 'basic',
       popular: true
@@ -259,8 +260,8 @@ export default function Pricing() {
     {
       name: "Platinum",
       icon: <Crown className="w-5 h-5 sm:w-6 sm:h-6" />,
-      price: "₹9,999",
-      monthlySubscription: "₹999/month",
+      price: "₹17,999",
+      monthlySubscription: "₹2,299/month",
       includes: "Complete AR + Video digital menu system",
       terms: "45% advance | Remaining after delivery",
       features: [
@@ -273,19 +274,20 @@ export default function Pricing() {
         "Custom Domain Support",
         "21-Day Premium Delivery",
         "12 Months Hosting Included",
-        "Monthly subscription: ₹999/month"
+        "Monthly subscription: ₹2,299/month"
       ],
       category: 'premium',
       bestseller: true
     }
   ], []);
 
+
   const gameAddons: Plan[] = useMemo(() => [
     {
       name: "Silver + Games",
       icon: <GamepadIcon className="w-5 h-5 sm:w-6 sm:h-6" />,
-      price: "₹8,999",
-      monthlySubscription: "₹899/month",
+      price: "₹14,999",
+      monthlySubscription: "₹1,999/month",
       includes: "Digital menu + Interactive games to engage customers",
       terms: "45% advance | Remaining after delivery",
       features: [
@@ -296,7 +298,7 @@ export default function Pricing() {
         "Priority Support",
         "15-Day Delivery",
         "12 Months Hosting Included",
-        "Monthly subscription: ₹899/month"
+        "Monthly subscription: ₹1,999/month"
       ],
       category: 'addon',
       hasGames: true
@@ -304,8 +306,8 @@ export default function Pricing() {
     {
       name: "Platinum + Games",
       icon: <GamepadIcon className="w-5 h-5 sm:w-6 sm:h-6" />,
-      price: "₹14,999",
-      monthlySubscription: "₹1,499/month",
+      price: "₹22,999",
+      monthlySubscription: "₹2,799/month",
       includes: "Ultimate dining experience with AR + Games",
       terms: "45% advance | Remaining after delivery",
       features: [
@@ -317,12 +319,13 @@ export default function Pricing() {
         "Highest customer engagement",
         "21-Day Premium Delivery",
         "12 Months Hosting Included",
-        "Monthly subscription: ₹1,499/month"
+        "Monthly subscription: ₹2,799/month"
       ],
       category: 'addon',
       hasGames: true
     }
   ], []);
+
 
   const extraNotes: Note[] = useMemo(() => [
     {
@@ -338,11 +341,11 @@ export default function Pricing() {
   const seoFaqs: Note[] = useMemo(() => [
     {
       title: "What is the cost of digital menu for restaurants?",
-      content: "Our digital menu pricing starts at ₹5,999 one-time setup fee plus ₹599/month subscription. This includes QR codes, mobile-responsive design, and basic analytics perfect for Indian restaurants."
+      content: "Our digital menu pricing starts at ₹9,999 one-time setup fee plus ₹1,399/month subscription. This includes QR codes, mobile-responsive design, and basic analytics perfect for Indian restaurants."
     },
     {
       title: "How much does QR code menu with games cost?",
-      content: "QR code menu with interactive games costs ₹8,999 for Silver + Games plan. Additional games and features available. Monthly subscription of ₹899 includes hosting, support, and game maintenance."
+      content: "QR code menu with interactive games costs ₹14,999 for Silver + Games plan. Additional games and features available. Monthly subscription of 1,999/month includes hosting, support, and game maintenance."
     }
   ], []);
 
@@ -742,6 +745,28 @@ export default function Pricing() {
                 </div>
               </div>
             )}
+          </section>
+
+
+          {/* Add-On Charges Section */}
+          <section className="mb-12 sm:mb-16">
+            <div className="bg-white shadow-lg border border-gray-200 rounded-2xl p-6 max-w-3xl mx-auto">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">
+                Add-On Charges
+              </h2>
+
+              <div className="space-y-3 text-gray-700 text-sm sm:text-base">
+                <div className="flex justify-between border-b pb-2">
+                  <span>Extra AR / Video Item</span>
+                  <strong>₹199</strong>
+                </div>
+
+                <div className="flex justify-between border-b pb-2">
+                  <span>Extra QR Code</span>
+                  <strong>₹299</strong>
+                </div>
+              </div>
+            </div>
           </section>
 
           {/* FAQ Section */}
