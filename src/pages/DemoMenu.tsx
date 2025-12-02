@@ -66,7 +66,7 @@ export default function DemoMenu() {
 
           <div className="mt-10">
             <a
-              href="https://him12.github.io/Web_Menu_QR_Demo/"
+              href="https://web-menu-qr-demo.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full 
