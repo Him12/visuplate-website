@@ -133,11 +133,9 @@ export default function Contact() {
               <a href="tel:+918851796110" className="block text-emerald-600 hover:text-emerald-700 font-medium">
                 +91-88517-96110
               </a>
-              <a href="tel:+919599202386" className="block text-emerald-600 hover:text-emerald-700 font-medium">
-                +91-95992-02386
-              </a>
+              
               <a href="tel:+918377861214" className="block text-emerald-600 hover:text-emerald-700 font-medium">
-                +91-83778-61214
+                +91-63878-11493
               </a>
             </div>
           </div>

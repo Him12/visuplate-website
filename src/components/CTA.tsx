@@ -87,7 +87,7 @@ export default function CTA() {
                   </div>
                   <div>
                     <div className="text-sm text-emerald-100">Email us</div>
-                    <div className="font-semibold">hello@thevisuplate.com</div>
+                    <div className="font-semibold">thevisuplate@gmail.com</div>
                   </div>
                 </div>
 

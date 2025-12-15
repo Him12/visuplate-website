@@ -340,7 +340,7 @@ export default function QRMenu() {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {features.map((feature, index) => (
+          {features.map((feature) => (
             <motion.article
               key={feature.title}
               variants={cardVariants}
