@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 export default function About() {
   useEffect(() => {
     document.title = "About Visuplate - Meet Our Team | Gagan Kaushik, Himanshu Kumar, Devang Singh";
-    
+
     const structuredData = {
       "@context": "https://schema.org",
       "@type": "AboutPage",
@@ -17,15 +17,10 @@ export default function About() {
         "description": "AR-powered digital menus for restaurants",
         "url": "https://visuplate.com",
         "founder": [
+          
           {
             "@type": "Person",
-            "name": "Gagan Kaushik",
-            "jobTitle": "CEO & Founder",
-            "sameAs": "https://www.linkedin.com/in/gagan-kaushik/"
-          },
-          {
-            "@type": "Person",
-            "name": "Himanshu Kumar", 
+            "name": "Himanshu Kumar",
             "jobTitle": "CTO & Founder",
             "sameAs": "https://www.linkedin.com/in/himanshu-kumar-93518b173/"
           }
@@ -58,24 +53,16 @@ export default function About() {
 
   const team = [
     {
-      name: 'Gagan Kaushik',
-      role: 'CEO & Founder',
-      bio: 'Visionary entrepreneur in restaurant technology innovation.',
-      image: "/images/CEO.jpg",
-      social: { linkedin: "https://www.linkedin.com/in/gagan-kaushik/" },
-      achievements: ['Menu Digitalization', 'Restaurant Innovation', 'Customer Experience']
-    },
-    {
       name: 'Himanshu Kumar',
-      role: 'CTO & Founder',
-      bio: 'Expert in AR technology with background at leading tech companies.',
+      role: 'CEO & CTO - Founder',
+      bio: 'Visionary entrepreneur in restaurant technology innovation and Expert in AR technology with background at leading tech companies.',
       image: "/images/CTO.jpg",
       social: { linkedin: "https://www.linkedin.com/in/himanshu-kumar-93518b173/" },
       achievements: ['AR Technology', 'Platform Architecture', 'Technical Innovation']
     },
     {
       name: 'Devang Pratap Singh',
-      role: 'CMO & Co-Founder',
+      role: 'CMO & CSO',
       bio: 'Dedicated to supporting restaurant partners and their growth.',
       image: "/images/CMO.jpg",
       social: { linkedin: "https://www.linkedin.com/in/devang-pratap-singh-a947a2241/" },
@@ -98,7 +85,7 @@ export default function About() {
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
             <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
               <p>Visuplate was born from diners wanting to see what they order and restaurants wanting smarter food showcasing.</p>
-              <p>Founded in 2025 by Gagan Kaushik and Himanshu Kumar to eliminate printed menus with engaging interactive experiences.</p>
+              <p>Founded in 2025 by two techies to eliminate printed menus with engaging interactive experiences.</p>
               <p>Partnering with 15+ restaurants across India, serving hundreds of diners with AR-powered menus daily.</p>
             </div>
           </div>
@@ -139,34 +126,65 @@ export default function About() {
 
         <div className="mb-24">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Meet Our Leadership Team</h2>
-            <p className="text-xl text-gray-600 leading-relaxed">Passionate innovators driving restaurant technology forward.</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Meet Our Leadership Team
+            </h2>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              Passionate innovators driving restaurant technology forward.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+          {/* ✅ PERFECTLY CENTERED */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
             {team.map((member, index) => (
-              <div key={index} className="group bg-white rounded-2xl p-6 border-2 border-gray-100 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 text-center relative overflow-hidden">
+              <div
+                key={index}
+                className="group bg-white rounded-2xl p-6 border-2 border-gray-100 hover:border-emerald-300 hover:shadow-xl transition-all duration-300 text-center relative overflow-hidden"
+              >
+                {/* Hover BG */}
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-teal-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
-                
+
+                {/* Image */}
                 <div className="relative w-32 h-32 mx-auto mb-6">
-                  <img src={member.image} alt={`${member.name} - ${member.role} at Visuplate`} className="w-full h-full rounded-full object-cover border-4 border-emerald-300 shadow-lg group-hover:border-emerald-400 transition-all duration-300" />
-                  <div className="absolute bottom-2 right-2 w-4 h-4 bg-emerald-500 rounded-full border-2 border-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <img
+                    src={member.image}
+                    alt={`${member.name} - ${member.role} at Visuplate`}
+                    className="w-full h-full rounded-full object-cover border-4 border-emerald-300 shadow-lg"
+                  />
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                <p className="text-emerald-600 font-semibold mb-4">{member.role}</p>
-                <p className="text-gray-600 leading-relaxed mb-6 text-sm">{member.bio}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {member.name}
+                </h3>
+
+                <p className="text-emerald-600 font-semibold mb-4">
+                  {member.role}
+                </p>
+
+                <p className="text-gray-600 text-sm mb-6">
+                  {member.bio}
+                </p>
 
                 <div className="flex flex-wrap gap-2 justify-center mb-6">
                   {member.achievements.map((achievement, idx) => (
-                    <span key={idx} className="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-medium">{achievement}</span>
+                    <span
+                      key={idx}
+                      className="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-full text-xs font-medium"
+                    >
+                      {achievement}
+                    </span>
                   ))}
                 </div>
 
-                <div className="flex justify-center space-x-4 pt-4 border-t border-gray-100">
+                <div className="flex justify-center pt-4 border-t border-gray-100">
                   {member.social.linkedin && (
-                    <a href={member.social.linkedin} target="_blank" rel="noopener noreferrer nofollow" className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-emerald-500 hover:text-white transition-all duration-200 group/link" aria-label={`Connect with ${member.name} on LinkedIn`}>
-                      <Linkedin className="w-4 h-4 group-hover/link:scale-110 transition-transform" />
+                    <a
+                      href={member.social.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-emerald-500 hover:text-white transition"
+                    >
+                      <Linkedin className="w-4 h-4" />
                     </a>
                   )}
                 </div>
@@ -174,6 +192,7 @@ export default function About() {
             ))}
           </div>
         </div>
+
 
         <div className="bg-gradient-to-br from-emerald-600 to-teal-600 rounded-3xl p-12 lg:p-16 text-white text-center">
           <h2 className="text-4xl font-bold mb-6">Join Us in Revolutionizing Dining</h2>
