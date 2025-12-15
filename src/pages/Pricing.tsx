@@ -386,7 +386,7 @@ export default function Pricing() {
 
     await new Promise(resolve => setTimeout(resolve, 1000));
 
-    const phoneNumber = "8851796110";
+    const phoneNumber = "+918851796110";
     const message = `New Plan Inquiry - TheVisuPlate!\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nRestaurant: ${formData.restaurant}\nSelected Plan: ${formData.plan}\n\nMessage: I want to get started with the ${formData.plan} plan!`;
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
